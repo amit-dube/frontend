@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://localhost/codeigniter4",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

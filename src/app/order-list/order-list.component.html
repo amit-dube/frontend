@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="d-flex justify-content-center"><h2>{{pagetitle}}</h2></div>
+
+<div class="buttonalign">
+
+  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" routerLinkActive="active" data-toggle="tooltip" title="Add Order" [routerLink]="['/addorder']"><i class="fa fa-plus"></i></a> &nbsp;&nbsp;
+  <button class="btn btn-danger btn-lg pull-right" title="Delete Order" (click)="deleteSelectedOrder()">
+    <i class="fa fa-close"></i>
+  </button>
+  
+ 
+</div>
+
+
+<ag-grid-angular
+  id="myGrid"
+  class="ag-theme-alpine"
+   style="width: 100%;"   
+   [columnDefs]="columnDefs"
+   [defaultColDef]="defaultColDef"
+   [rowData]="records"
+   [rowSelection]="rowSelection"
+   [domLayout]="domLayout"   
+   [animateRows]="true"
+   [pagination]="true"
+   [immutableColumns] = "true"
+   [paginationPageSize]="paginationPageSize"
+   rowSelection="multiple"
+  (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+
+
+
